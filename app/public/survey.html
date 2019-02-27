@@ -255,30 +255,11 @@
           ]
         };
 
-        // var userData = {
-        //   name: 'j',
-        //   photo: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/12/11/naturo-monkey-selfie.jpg?w968h681",
-        //   scores: [
-        //     1,
-        //     1,
-        //     3,
-        //     1,
-        //     1,
-        //     1,
-        //     1,
-        //     1,
-        //     1,
-        //     1
-        //   ]
-        // };
         // AJAX post the data to the friends API.
         $.post("/api/friends", userData, function (data) {
 
           // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-          
-          console.log(data.name);
           $("#match-name").text(data.name);
-          console.log(data.photo);
           $("#match-img").attr("src", data.photo);
 
           // Show the modal with the best match

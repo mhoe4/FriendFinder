@@ -41,14 +41,14 @@ module.exports = function (app) {
         for (x = 0; x < friendsData[i].scores.length; x++) {
           totalDif += Math.abs(parseInt(friendsData[i].scores[x]) - parseInt(req.body.scores[x]));
         }
+
+        //set lowest diff if there is not one
         if (lowestDif == undefined ) {
-          console.log('hi');
           lowestDif = totalDif;
           indexOfClosestMatch = i;
         }
         if (lowestDif > totalDif){
           
-          console.log('yoooo');
           lowestDif = totalDif;
           indexOfClosestMatch = i;
         }
